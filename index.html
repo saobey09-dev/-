@@ -2,35 +2,63 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سوق الدواء السوداني</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>سوق الدواء السوداني | دخول آمن</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="background-overlay"></div>
+
 <div id="auth-screen" class="auth-container">
+
+<div class="brand-header">
+<h1 class="main-title">سوق الدواء<br>السوداني</h1>
+<p class="sub-title">منصتك الموثوقة لتداول الدواء في السودان</p>
+</div>
+
 <div class="auth-card">
-<h1>سوق الدواء السوداني</h1>
-<div class="lang-toggle">
-<button onclick="changeLanguage('ar')">العربية</button>
-<button onclick="changeLanguage('en')">English</button>
+
+<div class="lang-toggle-bar">
+<button id="arBtn" class="lang-btn active" onclick="changeLanguage('ar')">العربية</button>
+<button id="enBtn" class="lang-btn" onclick="changeLanguage('en')">English</button>
 </div>
 
-<div id="login-section">
-<input type="email" id="emailInput" placeholder="البريد الإلكتروني / Email">
-<button class="btn-primary" onclick="showVerify()">إرسال رمز التأكيد</button>
+<div id="login-section" class="form-section fade-in">
+<p class="form-instruction" id="email-instruction">سجل دخولك عبر البريد الإلكتروني</p>
+<div class="input-group">
+<span class="input-icon">✉️</span>
+<input type="email" id="emailInput" placeholder="example@email.com" autocomplete="off">
+</div>
+<button class="btn-primary" onclick="showVerify()">
+<span id="btn-text-send">إرسال رمز التأكيد</span>
+<span class="btn-icon">➜</span>
+</button>
 </div>
 
-<div id="verify-section" style="display:none;">
-<p id="verify-text">أدخل الرمز المكون من 6 أرقام</p>
-<input type="text" id="otpInput" maxlength="6" placeholder="000000" style="text-align:center; letter-spacing: 5px;">
-<button class="btn-primary" onclick="enterApp()">تأكيد الدخول</button>
+<div id="verify-section" class="form-section fade-in" style="display:none;">
+<p class="form-instruction" id="verify-instruction">أدخل الرمز المكون من 6 أرقام المرسل لبريدك</p>
+<div class="input-group otp-group">
+<input type="text" id="otpInput" maxlength="6" placeholder="0 0 0 0 0 0">
 </div>
+<button class="btn-primary success" onclick="enterApp()">
+<span id="btn-text-verify">تأكيد الدخول</span>
+<span class="btn-icon">✔️</span>
+</button>
+<button class="btn-text-only" onclick="goBackToLogin()">
+<span id="btn-text-back">رجوع</span>
+</button>
 </div>
 </div>
 
-<div id="main-app" style="display:none;">
-<div id="page-content">
+<div class="auth-footer">
+<p>&copy; 2026 سوق الدواء السوداني. جميع الحقوق محفوظة.</p>
+</div>
+</div>
+
+<div id="main-app" class="app-container" style="display:none;">
+<div id="page-content" class="main-content">
 </div>
 
 <nav class="bottom-nav" id="main-nav"></nav>
