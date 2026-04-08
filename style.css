@@ -1,0 +1,257 @@
+/* --- الإعدادات العامة للموبايل (Mobile-First) --- */
+:root {
+--main-blue: #0a70f3;
+--dark-blue: #054c9e;
+--bg-overlay: rgba(10, 112, 243, 0.90); /* طبقة زرقة شفافة فوق الخلفية */
+--white: #ffffff;
+--text-dark: #333333;
+--text-light: #fdfdfd;
+--text-muted: #666666;
+--success-green: #2ecc71;
+--card-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+--input-bg: #f5f8ff;
+
+/* تحديد خط Cairo الافتراضي */
+--font-family: 'Cairo', sans-serif;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: var(--font-family);
+-webkit-tap-highlight-color: transparent; /* إزالة لون النقر على الموبايل */
+}
+
+body {
+height: 100vh;
+overflow: hidden;
+background-color: #f0f2f5;
+color: var(--text-dark);
+direction: rtl; /* الافتراضي عربي */
+}
+
+/* --- الخلفية (دربات، حقن، أدوية) --- */
+.background-overlay {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+/* صورة خلفية تمثيلية لأدوية، يفضل استبدال الرابط بصورة حقيقية لاحقاً */
+background-image: url('https://w0.peakpx.com/wallpaper/705/962/HD-wallpaper-medical-care-concepts-medicine-tablets-pills-syringes-stethoscopes.jpg');
+background-size: cover;
+background-position: center;
+z-index: -2;
+}
+
+body::after {
+content: '';
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+background-color: var(--bg-overlay); /* طبقة اللون الأزرق فوق الصورة */
+z-index: -1;
+}
+
+/* --- تنسيق شاشة التسجيل --- */
+.auth-container {
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-around; /* توزيع المحتوى بشكل عمودي */
+align-items: center;
+padding: 20px;
+z-index: 1;
+}
+
+/* العنوان الكبير والوصف */
+.brand-header {
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.main-title {
+font-size: 3.2rem; /* كبير جداً */
+font-weight: 800;
+color: var(--white);
+line-height: 1.1;
+text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ظل للعنوان */
+}
+
+.sub-title {
+font-size: 1rem;
+color: #e0e0e0;
+margin-top: 10px;
+}
+
+/* البطاقة الرئيسية (كرت الدخول) */
+.auth-card {
+background: var(--white);
+padding: 30px 20px;
+border-radius: 20px; /* زوايا دائرية ناعمة */
+box-shadow: var(--card-shadow);
+width: 100%;
+max-width: 450px; /* أقصى عرض على الشاشات الأكبر */
+text-align: center;
+border-top: 5px solid var(--dark-blue); /* خط علوي للتزيين */
+}
+
+/* تبديل اللغة */
+.lang-toggle-bar {
+display: flex;
+justify-content: center;
+background-color: var(--input-bg);
+border-radius: 12px;
+margin-bottom: 25px;
+padding: 5px;
+}
+
+.lang-btn {
+flex: 1;
+background: none;
+border: none;
+padding: 10px;
+font-size: 0.9rem;
+font-weight: 600;
+color: var(--main-blue);
+cursor: pointer;
+border-radius: 8px;
+transition: background 0.3s;
+}
+
+.lang-btn.active {
+background-color: var(--main-blue);
+color: var(--white);
+box-shadow: 0 4px 8px rgba(10, 112, 243, 0.3);
+}
+
+/* الخانات (Inputs) وتنسيقها */
+.form-instruction {
+font-size: 0.95rem;
+color: var(--text-muted);
+margin-bottom: 15px;
+font-weight: 600;
+}
+
+.input-group {
+position: relative;
+margin-bottom: 20px;
+}
+
+.input-icon {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+right: 15px; /* للعربي */
+font-size: 1.2rem;
+color: var(--main-blue);
+}
+
+/* تعديل الاتجاه للأيقونة عند اللغة الإنجليزية */
+[lang="en"] .input-icon {
+right: auto;
+left: 15px;
+}
+
+input {
+width: 100%;
+padding: 18px; /* خانة عريضة */
+padding-right: 50px; /* العربي: مسافة للأيقونة */
+border: 2px solid #e0e6ed;
+background-color: var(--input-bg);
+border-radius: 12px;
+font-size: 1rem;
+font-weight: 600;
+color: var(--text-dark);
+transition: border-color 0.3s;
+}
+
+[lang="en"] input {
+padding-right: 18px;
+padding-left: 50px; /* الإنجليزي: مسافة للأيقونة */
+}
+
+input:focus {
+border-color: var(--main-blue);
+outline: none;
+background-color: #fff;
+}
+
+/* خانة الـ OTP الستة */
+.otp-group input {
+letter-spacing: 12px;
+font-size: 1.5rem;
+text-align: center;
+font-weight: 700;
+padding: 15px;
+}
+
+/* الأزرار الاحترافية */
+.btn-primary {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+background: var(--main-blue);
+color: white;
+border: none;
+width: 100%;
+padding: 18px; /* زر عريض ومريح للنقر */
+border-radius: 12px;
+font-size: 1.1rem;
+font-weight: 700;
+cursor: pointer;
+box-shadow: 0 6px 20px rgba(10, 112, 243, 0.4);
+transition: background 0.3s, transform 0.1s;
+}
+
+.btn-primary:active {
+background: var(--dark-blue);
+transform: translateY(2px); /* تأثير الضغط */
+}
+
+.btn-primary.success {
+background: var(--success-green);
+box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.btn-icon {
+font-size: 1.2rem;
+}
+
+.btn-text-only {
+margin-top: 15px;
+background: none;
+border: none;
+color: var(--text-muted);
+font-weight: 600;
+cursor: pointer;
+text-decoration: underline;
+}
+
+/* الفوتر */
+.auth-footer {
+text-align: center;
+color: rgba(255, 255, 255, 0.7);
+font-size: 0.8rem;
+margin-bottom: 10px;
+}
+
+/* --- تأثيرات التحميل (Animations) --- */
+.fade-in {
+animation: fadeInAnimation 0.5s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+0% { opacity: 0; transform: translateY(20px); }
+100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- تعديلات اللغة الإنجليزية عموماً --- */
+[lang="en"] .auth-card { direction: ltr; }
+[lang="en"] .brand-header .main-title { font-size: 2.8rem; } /* أصغر قليلاً لتناسب الكلمات */
+
+/* --- تنسيقات التطبيق الرئيسية (تحتاج لإكمال في ملفاتها) --- */
+.app-container { height: 100vh; background-color: #f0f2f5; position: relative; }
+.main-content { padding-bottom: 70px; overflow-y: auto; height: 100%; }
+
